@@ -1,0 +1,108 @@
+/* Dark-theme overrides for vue-stream-markdown inside ai-elements MessageResponse */
+.dark .message-response p {
+  margin: 0 0 0.75em;
+  color: #d3d6dc;
+}
+.dark .message-response p:last-child {
+  margin-bottom: 0;
+}
+
+.dark .message-response h1,
+.dark .message-response h2,
+.dark .message-response h3,
+.dark .message-response h4 {
+  color: #f4f4f5;
+  font-weight: 600;
+  margin: 1em 0 0.4em;
+  line-height: 1.4;
+}
+.dark .message-response h1 { font-size: 18px; }
+.dark .message-response h2 { font-size: 16px; }
+.dark .message-response h3 { font-size: 15px; }
+
+.dark .message-response strong { color: #e5e5e5; font-weight: 600; }
+.dark .message-response em { color: #b8bec8; }
+
+.dark .message-response code:not(pre code) {
+  font-family: 'SF Mono', 'Fira Code', monospace;
+  font-size: 12.5px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 1px 6px;
+  border-radius: 6px;
+  color: #b7f7da;
+}
+
+.dark .message-response pre {
+  background: #0e1013 !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 12px !important;
+  padding: 0 !important;
+  margin: 10px 0 !important;
+  overflow: hidden !important;
+}
+
+.dark .message-response pre code {
+  display: block;
+  padding: 14px 16px !important;
+  font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace !important;
+  font-size: 12.5px !important;
+  line-height: 1.65 !important;
+  background: transparent !important;
+  border: none !important;
+  color: #d8dee9 !important;
+  overflow-x: auto;
+}
+
+.dark .message-response .shiki,
+.dark .message-response .shiki code {
+  background: transparent !important;
+}
+
+.dark .message-response ul,
+.dark .message-response ol {
+  padding-left: 1.4em;
+  margin: 0.5em 0;
+  color: #d3d6dc;
+}
+.dark .message-response li {
+  margin: 0.25em 0;
+  line-height: 1.7;
+}
+.dark .message-response li::marker { color: #6ee7b7; }
+
+.dark .message-response hr {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  margin: 1em 0;
+}
+
+.dark .message-response blockquote {
+  border-left: 3px solid rgba(255, 255, 255, 0.15);
+  padding-left: 12px;
+  margin: 0.5em 0;
+  color: #a8adb7;
+  font-style: italic;
+}
+
+.dark .message-response table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 0.75em 0;
+  font-size: 13px;
+}
+.dark .message-response th,
+.dark .message-response td {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 6px 12px;
+  text-align: left;
+  color: #d3d6dc;
+}
+.dark .message-response th {
+  background: rgba(255, 255, 255, 0.04);
+  color: #ddd;
+  font-weight: 600;
+}
+.dark .message-response tr:hover td {
+  background: rgba(255, 255, 255, 0.02);
+}
