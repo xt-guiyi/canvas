@@ -1,5 +1,6 @@
 import { computed, ref, watch } from 'vue'
 import { defineStore } from 'pinia'
+
 import type { ChatAttachment, ChatMessage, ChatSession } from '@/types/chat'
 
 const API_URL = 'http://127.0.0.1:8000/api/v1/chat/agent'
@@ -139,7 +140,7 @@ export const useChatStore = defineStore('chat', () => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           messages: history,
-          model: 'codex:gpt-5.5',
+          model:  'gpt-5.5',
           temperature: 0.7,
           thinking_mode: thinkingMode.value,
         }),

@@ -7,6 +7,14 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-canvas-bg: var(--canvas-bg);
+  --color-surface: var(--surface);
+  --color-surface-elevated: var(--surface-elevated);
+  --color-border-muted: var(--border-muted);
+  --color-accent-soft: var(--accent-soft);
+  --color-text: var(--canvas-text);
+  --color-text-muted: var(--canvas-text-muted);
+  --color-text-dim: var(--canvas-text-dim);
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif,
     'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 
@@ -78,6 +86,15 @@
   --sidebar-accent-foreground: #171717;
   --sidebar-border: #e5e5e5;
   --sidebar-ring: #a3a3a3;
+  --canvas-bg: #0a0a0a;
+  --surface: #18181b;
+  --surface-elevated: #16181e;
+  --border-muted: #3d4654;
+  --accent-soft: #8fa8ff;
+  --canvas-text: #e8eaed;
+  --canvas-text-muted: #9aa4b2;
+  --canvas-text-dim: #6b7280;
+  --handle-offset: 16px;
 }
 
 .dark {
@@ -112,6 +129,15 @@
   --sidebar-accent-foreground: #fafafa;
   --sidebar-border: rgba(255, 255, 255, 0.1);
   --sidebar-ring: #525252;
+  --canvas-bg: #0a0a0a;
+  --surface: #18181b;
+  --surface-elevated: #16181e;
+  --border-muted: #3d4654;
+  --accent-soft: #8fa8ff;
+  --canvas-text: #e8eaed;
+  --canvas-text-muted: #9aa4b2;
+  --canvas-text-dim: #6b7280;
+  --handle-offset: 16px;
 }
 
 @layer base {
@@ -158,4 +184,86 @@
     background: #0d0f12;
     background-clip: padding-box;
   }
+}
+
+.canvas-flow .vue-flow__viewport,
+.canvas-flow .vue-flow__nodes,
+.canvas-flow .vue-flow__node,
+.canvas-flow .ai-node,
+.canvas-flow .ai-node__shell {
+  overflow: visible !important;
+}
+
+.canvas-flow .vue-flow__node.node-highlight-primary {
+  z-index: 9999 !important;
+}
+
+.canvas-flow .vue-flow__node.node-highlight-primary .ai-node__body {
+  border-color: var(--accent);
+  box-shadow:
+    0 0 0 3px rgba(108, 140, 255, 0.4),
+    0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.canvas-flow .ai-node__handle.vue-flow__handle {
+  width: 22px !important;
+  height: 22px !important;
+  min-width: 22px !important;
+  min-height: 22px !important;
+  border: 1px solid #3f3f46;
+  border-radius: 50%;
+  background: #27272a;
+  z-index: 10;
+  transition:
+    transform 0.22s cubic-bezier(0.34, 1.2, 0.64, 1),
+    background 0.15s,
+    border-color 0.15s;
+}
+
+.canvas-flow .ai-node__handle.vue-flow__handle-left {
+  transform: translate(calc(-50% - var(--handle-offset)), -50%);
+}
+
+.canvas-flow .ai-node__handle.vue-flow__handle-right {
+  transform: translate(calc(50% + var(--handle-offset)), -50%);
+}
+
+.canvas-flow .ai-node__handle.vue-flow__handle:hover {
+  background: #3f3f46;
+  border-color: #52525b;
+}
+
+.canvas-flow .ai-node__handle.vue-flow__handle::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 7px;
+  height: 7px;
+  transform: translate(-50%, -50%);
+  background:
+    linear-gradient(#a1a1aa, #a1a1aa) center / 1px 100% no-repeat,
+    linear-gradient(#a1a1aa, #a1a1aa) center / 100% 1px no-repeat;
+  pointer-events: none;
+}
+
+.video-node-controls__range {
+  margin: 0;
+  appearance: none;
+  background: transparent;
+}
+
+.video-node-controls__range::-webkit-slider-thumb {
+  appearance: none;
+  width: 10px;
+  height: 10px;
+}
+
+.canvas-flow .vue-flow__edge.edge-highlight {
+  z-index: 50 !important;
+}
+
+.canvas-flow .vue-flow__edge.edge-highlight .vue-flow__edge-path {
+  stroke: var(--accent) !important;
+  stroke-width: 2.5px !important;
 }

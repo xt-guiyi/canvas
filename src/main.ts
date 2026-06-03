@@ -1,5 +1,9 @@
 import './assets/index.css'
 import './assets/chat-markdown.css'
+import '@vue-flow/core/dist/style.css'
+import '@vue-flow/core/dist/theme-default.css'
+import '@vue-flow/controls/dist/style.css'
+import '@vue-flow/minimap/dist/style.css'
 
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'

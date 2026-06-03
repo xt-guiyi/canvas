@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import CanvasView from '../views/CanvasView.vue'
+import CanvasView from '../views/canvas/CanvasView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
